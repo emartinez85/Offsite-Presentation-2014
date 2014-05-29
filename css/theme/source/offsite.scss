@@ -1,0 +1,101 @@
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is darkblue.
+ *
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
+
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'Roboto Condensed', sans-serif;
+$mainColor: #333;
+$headingFont: 'Open Sans Condensed', sans-serif;
+$headingColor: #000;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #fff;
+$linkColor: #192823;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+.reveal {
+    font-weight: 300;
+
+    .no-gfx {
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        -webkit-transition: all .2s linear;
+           -moz-transition: all .2s linear;
+            -ms-transition: all .2s linear;
+             -o-transition: all .2s linear;
+                transition: all .2s linear;
+    }
+
+    .intro {
+        color: #666;
+        text-align: right;
+
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        img {
+            float: right;
+            margin-left: 0.5em;
+        }
+
+        span {
+            color: $mainColor;
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: 700;
+        }
+    }
+
+    .section-transition {
+        h1, h4 {
+            text-transform: none;
+            color: #fff;
+            text-align: right;
+        }
+    }
+
+    .module-cont {
+        position: relative;
+        height: 665px;
+
+        .module {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -332px;
+            margin-top: -332px;
+            width: 665px;
+            height: 665px;
+        }
+    }
+
+}
